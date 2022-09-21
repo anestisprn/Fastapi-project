@@ -70,7 +70,7 @@ def show(id, response: Response, db: Session = Depends(get_db)):
 # this is not working..
 
 
-@app.post('/user')
+@app.post('/user', status_code=status.HTTP_201_CREATED)
 def create_user(request: schemas.User, db: Session = Depends(get_db)):
 
     new_user = models.User(
@@ -78,5 +78,4 @@ def create_user(request: schemas.User, db: Session = Depends(get_db)):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
-
     return new_user
