@@ -13,3 +13,5 @@ starlette==0.20.4
 toml==0.10.2
 typing_extensions==4.3.0
 uvicorn==0.18.3
+passlib==1.7.4
+bcrypt==4.0.0
